@@ -1,8 +1,6 @@
 # Use Ubuntu 22.04 as the base image
 FROM ubuntu:22.04
 
-WORKDIR /app
-
 # Set Python to not buffer stdout/stderr (important for Docker logging)
 ENV PYTHONUNBUFFERED=1
 
