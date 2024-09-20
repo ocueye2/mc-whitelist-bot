@@ -1,9 +1,12 @@
 # Dockerfile
-FROM python:3.10-slim
+FROM ubuntu:22.04
+
 
 
 # Copy your script
 COPY start.py .
+
+CMD sudo apt install python3 python3-pip
 
 # Install dependencies if necessary
 RUN pip install -r requirements.txt
