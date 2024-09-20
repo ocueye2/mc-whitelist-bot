@@ -15,4 +15,4 @@ ENV PORT=PORT
 ENV PASSWORD=PASSWORD
 
 
-CMD ["python3", "start.py"]
+CMD ["python3", "bot.py"]
