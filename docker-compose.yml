@@ -1,6 +1,6 @@
 services:
   web:
-    image: your-image
+    image: python:3.10-slim
     environment:
       - KEY=${KEY}
       - HOST=${HOST}
