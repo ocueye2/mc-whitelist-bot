@@ -1,0 +1,9 @@
+services:
+  web:
+    image: your-image
+    environment:
+      - KEY=${KEU}
+      - HOST=${HOST}
+      - PORT=${PORT}
+      - PASSWORD=${PASSWORD}
+

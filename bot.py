@@ -1,20 +1,8 @@
-try:
-    import discord
-    from discord import app_commands
-    from discord.ext import commands
-    from mcrcon import MCRcon
-except:
-    print("it seems like you did not install the moduals.")
-    print("would you like to install them")
-    if input("y/n :") == "y":
-        import os
-        # pip uninstall py-cord mcrcon discord
-        os.system("pip install py-cord mcrcon discord")
-        import discord
-        from discord import app_commands
-        from discord.ext import commands
-        from mcrcon import MCRcon
-
+import discord
+from discord import app_commands
+from discord.ext import commands
+from mcrcon import MCRcon
+import os
 
 
         
@@ -24,9 +12,9 @@ intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 # Minecraft RCON credentials (replace these)
-RCON_HOST = '192.***.***.***'
-RCON_PORT = 25575  # default RCON port
-RCON_PASSWORD = 'RCON_PASSWORD'
+RCON_HOST = os.getenv('HOST')
+RCON_PORT = os.getenv('PORT')  
+RCON_PASSWORD = os.getenv('PASSWORD') 
 
 # Command to whitelist a player
 @bot.tree.command(name='whitelist', description='Whitelist a player on the Minecraft server')
@@ -62,4 +50,4 @@ async def on_ready():
     print(f'Logged in as {bot.user}!')
 
 # Run the bot
-bot.run('Bot key')
+bot.run(os.getenv('key'))
