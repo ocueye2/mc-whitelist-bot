@@ -4,7 +4,7 @@ from discord.ext import commands
 from mcrcon import MCRcon
 import os
 
-
+print("starting")
         
 
 # Set up the bot
