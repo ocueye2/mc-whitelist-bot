@@ -18,6 +18,7 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 RCON_HOST = os.getenv('HOST')
 RCON_PORT = int(os.getenv('PORT'))
 RCON_PASSWORD = os.getenv('PASSWORD')
+info = os.getenv('INFO')
 
 logging.info(f'RCON credentials: HOST={RCON_HOST}, PORT={RCON_PORT}, PASSWORD={"[REDACTED]" if RCON_PASSWORD else None}')
 
@@ -30,6 +31,7 @@ async def whitelist(interaction: discord.Interaction, username: str):
             response = mcr.command(f'whitelist add {username}')
             logging.info(f'Whitelist response: {response}')
             await interaction.response.send_message(f'Player {username} has been whitelisted.')
+            await interaction.response.send_message(f'{info}')
     except Exception as e:
         logging.error(f'Failed to whitelist {username}: {e}')
         await interaction.response.send_message(f'Failed to whitelist {username}. Error: {e}')
@@ -38,7 +40,7 @@ async def whitelist(interaction: discord.Interaction, username: str):
 @bot.tree.command(name='info', description='List server info')
 async def info(interaction: discord.Interaction):
     logging.info(f'Info command used by {interaction.user}')
-    await interaction.response.send_message(f'The server id is mc.carsonmayn.com \n Get the mods at mod.carsonmayn.com .\n Thank you for using the bot.')
+    await interaction.response.send_message(f'{info}')
 
 # Admin-only RCON command
 @bot.tree.command(name='drcon', description='Admin only')

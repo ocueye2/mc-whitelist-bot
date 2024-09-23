@@ -6,4 +6,5 @@ services:
       - HOST=${HOST}
       - PORT=${PORT}
       - PASSWORD=${PASSWORD}
+      - INFO=${INFO}
 
