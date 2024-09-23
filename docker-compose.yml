@@ -1,5 +1,6 @@
 services:
   web:
+    build: .
     environment:
       - KEY=${KEY}
       - HOST=${HOST}
