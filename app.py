@@ -38,7 +38,7 @@ async def whitelist(interaction: discord.Interaction, username: str):
 @bot.tree.command(name='info', description='List server info')
 async def info(interaction: discord.Interaction):
     logging.info(f'Info command used by {interaction.user}')
-    await interaction.response.send_message(f'The server id is \nGet the mods at .\nThank you for using the bot.')
+    await interaction.response.send_message(f'The server id is mc.carsonmayn.com \n Get the mods at mod.carsonmayn.com .\n Thank you for using the bot.')
 
 # Admin-only RCON command
 @bot.tree.command(name='drcon', description='Admin only')
