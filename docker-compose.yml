@@ -1,6 +1,5 @@
 services:
   web:
-    image: python:3.12.3
     environment:
       - KEY=${KEY}
       - HOST=${HOST}

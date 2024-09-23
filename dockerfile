@@ -8,7 +8,9 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install any needed packages specified in requirements.txt
-RUN pip install discord pycord mcrcon
+RUN pip install discord  
+RUN pip install pycord 
+RUN pip install mcrcon
 # Copy the rest of your application code into the container at /app
 COPY . .
 
