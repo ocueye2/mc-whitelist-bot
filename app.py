@@ -16,7 +16,7 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 
 # Minecraft RCON credentials (replace these)
 RCON_HOST = os.getenv('HOST')
-RCON_PORT = os.getenv('PORT')  
+RCON_PORT = int(os.getenv('PORT'))
 RCON_PASSWORD = os.getenv('PASSWORD')
 
 logging.info(f'RCON credentials: HOST={RCON_HOST}, PORT={RCON_PORT}, PASSWORD={"[REDACTED]" if RCON_PASSWORD else None}')
