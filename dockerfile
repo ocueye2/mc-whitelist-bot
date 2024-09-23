@@ -16,4 +16,4 @@ COPY . .
 
 
 # Run app.py when the container launches
-CMD ["python", "bot.py"]
+CMD ["python", "app.py"]
